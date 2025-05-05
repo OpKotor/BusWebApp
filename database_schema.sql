@@ -1,4 +1,4 @@
-CREATE TABLE korisnici (
+CREATE DATABASE korisnici (
     id INT AUTO_INCREMENT PRIMARY KEY,
     ime_firme VARCHAR(255) NOT NULL,
     drzava VARCHAR(100) NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE korisnici (
     tip_vozila ENUM('A', 'B', 'C') NOT NULL
 );
 
-CREATE TABLE slotovi (
+CREATE DATABASE slotovi (
     id INT AUTO_INCREMENT PRIMARY KEY,
     datum DATE NOT NULL,
     vrijeme_pocetka TIME NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE slotovi (
     FOREIGN KEY (korisnik_id) REFERENCES korisnici(id)
 );
 
-CREATE TABLE placanja (
+CREATE DATABASE placanja (
     id INT AUTO_INCREMENT PRIMARY KEY,
     korisnik_id INT,
     slot_id INT,
