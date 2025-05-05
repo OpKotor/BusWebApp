@@ -59,5 +59,5 @@ $pdf->Output($pdfOutputPath, 'F');
 unlink($qrFilePath);
 
 // Prikaz poruke o uspehu
-echo "PDF račun je uspešno generisan! Preuzmite ga ovde: <a href='$pdfOutputPath'>Preuzmi PDF</a>";
+echo "PDF račun je uspješno generisan! Preuzmite ga ovdje: <a href='$pdfOutputPath'>Preuzmi PDF</a>";
 ?>
