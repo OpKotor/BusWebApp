@@ -1,3 +1,18 @@
+<?php
+
+// Uključivanje konekcije sa bazom
+$mysqli = require_once __DIR__ . '/db.php';
+
+// SQL upit za dobijanje podataka
+$sql = "SELECT * FROM slotovi"; // Primer upita
+$result = $mysqli->query($sql);
+
+if (!$result) {
+    die("Greška u upitu: " . $mysqli->error);
+}
+?>
+
+<!-- HTML za prikaz podataka -->
 <thead>
     <tr>
         <th>Datum</th>
@@ -24,7 +39,7 @@
         <?php endwhile; ?>
     <?php else: ?>
         <tr>
-            <td colspan="4">Nema slobodnih slotova </td>
+            <td colspan="4">Nema slobodnih slotova</td>
         </tr>
     <?php endif; ?>
 </tbody>
