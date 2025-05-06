@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Korisnik;
 use Illuminate\Http\Request;
 
 class KorisnikController extends Controller
 {
     public function prikaziFormu()
     {
-        return view('korisnik');
+        // Prikaz forme za unos korisnika
+        return view('korisnik.forma');
     }
 
     public function sacuvaj(Request $request)
     {
-        Korisnik::create($request->all());
-        return redirect()->route('slotovi')->with('success', 'Podaci su sačuvani!');
+        // Logika za čuvanje korisnika
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        // Sačuvajte podatke u bazu ili uradite nešto drugo
+        return redirect()->route('korisnik')->with('success', 'Korisnik sačuvan!');
     }
 }
