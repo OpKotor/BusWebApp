@@ -1,3 +1,5 @@
+<?php
+
 use App\Http\Controllers\SlotController;
 use App\Http\Controllers\KorisnikController;
 
@@ -6,3 +8,4 @@ Route::post('/rezervisi', [SlotController::class, 'rezervisi'])->name('rezervisi
 
 Route::get('/korisnik', [KorisnikController::class, 'prikaziFormu'])->name('korisnik');
 Route::post('/korisnik', [KorisnikController::class, 'sacuvaj'])->name('sacuvajKorisnika');
+
